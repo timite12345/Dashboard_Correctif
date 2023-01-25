@@ -10,6 +10,7 @@ use App\Models\User;
 
 use Kreait\Firebase\Database;
 use Illuminate\Support\Facades\Route ;
+use Illuminate\Support\Facades\View as FacadesView;
 use View;
 
 class FormController extends Controller
@@ -25,10 +26,12 @@ class FormController extends Controller
 
     public function index(Request $request)
     {
+        return view('FormEmploy');
     }
 
     public function FormulEmploy(Request $request)
     {
+
         $postData=[
             'email'=>$request->email,
             'nom'=>$request->name,

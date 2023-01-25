@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "925070568652",
+    "firebase_url": "https://pfeprojet-47483-default-rtdb.firebaseio.com",
+    "project_id": "pfeprojet-47483",
+    "storage_bucket": "pfeprojet-47483.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:925070568652:android:bb47844257ea4eb4bea669",
+        "android_client_info": {
+          "package_name": "Driverapp.projet_fsm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "925070568652-f8cbjl3v3fhqst2gfr740b87kd11dqb9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZgupNaLKAmI7HLH8pKzYcd_OCke6klAM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "925070568652-f8cbjl3v3fhqst2gfr740b87kd11dqb9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

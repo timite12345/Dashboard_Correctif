@@ -4,18 +4,50 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Auth;
-use App\Models\User;
-
 use Kreait\Firebase\Database;
 use Illuminate\Support\Facades\Route ;
-use Illuminate\Support\Facades\View as FacadesView;
-use View;
+use App\Http\Controllers\Controller;
 
 class FormController extends Controller
 {
-    public $database;
+    private $database;
+
+public function __construct()
+{
+    $this->database = \App\Services\FirebaseService::connect();
+}
+public function create(Request $request)
+{
+    $this->database
+        ->getReference('test/blogs/' . $request['title'])
+        ->set([
+            'email' => $request['email'] ,
+            'name' => $request['name'],
+            'prenom' => $request['prenom'],
+            'numtel' => $request['numtel'],
+            'password' => $request['password'],
+        ]);
+
+    return response()->json('blog has been created');
+}
+public function index()
+{
+    return response()->json($this->database->getReference('test/blogs')->getValue());
+}
+
+
+
+    }
+
+  /*  public function Create(Request $request){
+        $data=$request->all();
+        $password=Hash::make($request->password);
+        $data ['password']= $request->password ;
+        $save = User::create($data);
+    } */
+
+
+    /*public $database;
     public $ref_tablename;
 
     public function __construct(Database $database)
@@ -49,14 +81,4 @@ class FormController extends Controller
         else {
             return redirect('FormEmploy')->with('status','Une erreur est survenue lors de Ajout');
 
-        }
-
-    }
-
-  /*  public function Create(Request $request){
-        $data=$request->all();
-        $password=Hash::make($request->password);
-        $data ['password']= $request->password ;
-        $save = User::create($data);
-    } */
-}
+        } */

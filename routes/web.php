@@ -14,7 +14,9 @@ use App\Http\Controllers\FormController;
 |
 */
 Route::get('firebase','FirebaseController@index');
-Route::post('/FormEmploy', [FormController::class, 'FormulEmploy'])->name('saveUser');
+Route::post('/', [FormController::class, 'create'])->name('saveUser');
+Route::get('/', [FormController::class, 'index']);
+
 
 Route::get('/FormEmploy', function () {
     return view('FormEmploy');

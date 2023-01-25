@@ -448,7 +448,8 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form id="quickForm" action='{{route("saveUser")}}' method="post">
+
+              <form  action='{{route("saveUser")}}' method="post">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
